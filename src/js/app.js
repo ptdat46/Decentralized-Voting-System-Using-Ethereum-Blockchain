@@ -9,16 +9,13 @@ var VotingContract = contract(votingArtifacts)
 
 window.App = {
   eventStart: async function() { 
-    // Wait for accounts to be loaded
     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
     
     VotingContract.setProvider(window.ethereum)
-    
-    // Use the first account from the returned accounts array
+
     const account = accounts[0];
     VotingContract.defaults({from: account, gas: 6654755})
 
-    // Load account data
     App.account = account;
     $("#accountAddress").html("Your Account: " + account);
     VotingContract.deployed().then(function(instance){
@@ -78,8 +75,12 @@ window.App = {
               var name = data[1];
               var party = data[2];
               var voteCount = data[3];
+              
               var viewCandidates = `<tr><td> <input class="form-check-input" type="radio" name="candidate" value="${id}" id=${id}>` + name + "</td><td>" + party + "</td><td>" + voteCount + "</td></tr>"
               $("#boxCandidate").append(viewCandidates)
+              
+              var adminView = `<tr><td>${id}</td><td>${name}</td><td>${party}</td><td>${voteCount}</td></tr>`
+              $("#adminCandidateList").append(adminView)
             })
         }
         
@@ -126,4 +127,13 @@ window.addEventListener("load", function() {
     window.eth = new Web3(new Web3.providers.HttpProvider("http://127.0.0.1:9545"))
   }
   window.App.eventStart()
+  
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', function() {
+      localStorage.removeItem('jwtTokenAdmin');
+      localStorage.removeItem('jwtTokenVoter');
+      window.location.href = 'http://127.0.0.1:3000/';
+    });
+  }
 })

@@ -2,15 +2,15 @@
 
 #### The Decentralized Voting System using Ethereum Blockchain is a secure and transparent solution for conducting elections. Leveraging Ethereum's blockchain technology, this system ensures tamper-proof voting records, enabling users to cast their votes remotely while maintaining anonymity and preventing fraud. Explore this innovative project for trustworthy and decentralized voting processes.
 #### For a cool demo of this project watch this [YouTube video](https://www.youtube.com/watch?v=a5CJ70D2P-E).
-#### For more details checkout [Project Report](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/Project%20Report%20github.pdf).
+#### For more details checkout the Project Report in the repository.
 #### PS: This project is not maintained anymore.
 
 ## Features
--  Implements JWT for secure voter authentication and authorization.
--  Utilizes Ethereum blockchain for tamper-proof and transparent voting records.
--  Removes the need for intermediaries, ensuring a trustless voting process.
--  Admin panel to manage candidates, set voting dates, and monitor results.
--  Intuitive UI for voters to cast votes and view candidate information.
+-   Implements JWT for secure voter authentication and authorization.
+-   Utilizes Ethereum blockchain for tamper-proof and transparent voting records.
+-   Removes the need for intermediaries, ensuring a trustless voting process.
+-   Admin panel to manage candidates, set voting dates, and monitor results.
+-   Intuitive UI for voters to cast votes and view candidate information.
 
 ## Requirements
 - Node.js (version – 18.14.0)
@@ -21,11 +21,11 @@
 
 ## Screenshots
 
-![Login Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/login%20ss.png)
+![Login Page](public/login%20ss.png)
 
-![Admin Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/admin%20ss.png)
+![Admin Page](public/admin%20ss.png)
 
-![Voter Page](https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain/blob/main/public/index%20ss.png)
+![Voter Page](public/index%20ss.png)
 
 ## Installation
 
@@ -33,7 +33,7 @@
 
 2. Clone the repository by using the command
         
-        git clone https://github.com/Krish-Depani/Decentralized-Voting-System-Using-Ethereum-Blockchain.git
+        git clone https://github.com/your-username/Decentralized-Voting-System-Using-Ethereum-Blockchain.git
 
 3. Download and install [Ganache](https://trufflesuite.com/ganache/).
 
@@ -49,11 +49,11 @@
 
 9. In the database created, create new table named <b>voters</b> in the given format and add some values.
 
-           CREATE TABLE voters (
-           voter_id VARCHAR(36) PRIMARY KEY NOT NULL,
-           role ENUM('admin', 'user') NOT NULL,
-           password VARCHAR(255) NOT NULL
-           );
+            CREATE TABLE voters (
+            voter_id VARCHAR(36) PRIMARY KEY NOT NULL,
+            role ENUM('admin', 'user') NOT NULL,
+            password VARCHAR(255) NOT NULL
+            );
    <br>
 
         +--------------------------------------+-------+-----------+
@@ -101,7 +101,7 @@
 3. Navigate to `Database_API` folder in another terminal
     
         cd Database_API
-    then start the database server by following command
+   then start the database server by following command
 
         uvicorn main:app --reload --host 127.0.0.1
 
@@ -114,25 +114,25 @@ For more info about usage checkout [YouTube video](https://www.youtube.com/watch
 
 ## Code Structure
 
-    ├── blockchain-voting-dapp            # Root directory of the project.
-        ├── build                         # Directory containing compiled contract artifacts.
-        |   └── contracts                 
-        |       ├── Migrations.json       
-        |       └── Voting.json           
-        ├── contracts                     # Directory containing smart contract source code.
-        |   ├── 2_deploy_contracts.js     
-        |   ├── Migrations.sol            
-        |   └── Voting.sol                
+    ├── blockchain-voting-dapp             # Root directory of the project.
+        ├── build                          # Directory containing compiled contract artifacts.
+        |   └── contracts                  
+        |       ├── Migrations.json        
+        |       └── Voting.json            
+        ├── contracts                      # Directory containing smart contract source code.
+        |   ├── 2_deploy_contracts.js      
+        |   ├── Migrations.sol             
+        |   └── Voting.sol                 
         ├── Database_API                  # API code for database communication.
-        |   └── main.py                   
+        |   └── main.py                    
         ├── migrations                    # Ethereum contract deployment scripts.
-        |   └── 1_initial_migration.js    
+        |   └── 1_initial_migration.js     
         ├── node_modules                  # Node.js modules and dependencies.
         ├── public                        # Public assets like favicon.
-        |   └── favicon.ico               
-        ├── src                           
+        |   └── favicon.ico                
+        ├── src                            
         |   ├── assets                    # Project images.
-        |   |   └── eth5.jpg              
+        |   |   └── eth5.jpg               
         |   ├── css                       # CSS stylesheets.
         |   |   ├── admin.css             
         |   |   ├── index.css             
@@ -151,5 +151,4 @@ For more info about usage checkout [YouTube video](https://www.youtube.com/watch
         ├── package.json                  # Node.js package configuration.
         ├── package-lock.json             # Lockfile for package dependencies.
         ├── README.md                     # Project documentation.
-        └── truffle-config.js                    # Truffle configuration file.
-
+        └── truffle-config.js             # Truffle configuration file.****
